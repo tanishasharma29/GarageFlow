@@ -1,7 +1,7 @@
 package GarageFlow.controller;
 
 import GarageFlow.model.Vehicle;
-import GarageFlow.repository.VehicleRepository;
+import GarageFlow.service.VehicleService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,19 +10,41 @@ import java.util.List;
 @RequestMapping("/vehicles")
 public class VehicleController {
 
-    private final VehicleRepository repository;
+    private final VehicleService vehicleService;
 
-    public VehicleController(VehicleRepository repository) {
-        this.repository = repository;
+    public VehicleController(VehicleService vehicleService) {
+        this.vehicleService = vehicleService;
     }
 
+    // GET all vehicles
     @GetMapping
-    public List<Vehicle> getVehicles() {
-        return repository.findAll();
+    public List<Vehicle> getAllVehicles() {
+        return vehicleService.getAllVehicles();
     }
 
+    // GET vehicle by ID
+    @GetMapping("/{id}")
+    public Vehicle getVehicleById(@PathVariable Long id) {
+        return vehicleService.getVehicleById(id);
+    }
+
+    // CREATE vehicle
     @PostMapping
-    public Vehicle addVehicle(@RequestBody Vehicle vehicle) {
-        return repository.save(vehicle);
+    public Vehicle createVehicle(@RequestBody Vehicle vehicle) {
+        return vehicleService.saveVehicle(vehicle);
+    }
+
+    // UPDATE vehicle
+    @PutMapping("/{id}")
+    public Vehicle updateVehicle(@PathVariable Long id,
+                                 @RequestBody Vehicle updatedVehicle) {
+        return vehicleService.updateVehicle(id, updatedVehicle);
+    }
+
+    // DELETE vehicle
+    @DeleteMapping("/{id}")
+    public String deleteVehicle(@PathVariable Long id) {
+        vehicleService.deleteVehicle(id);
+        return "Vehicle deleted successfully";
     }
 }
