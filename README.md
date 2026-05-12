@@ -56,22 +56,16 @@ src/main/java/GarageFlow
 ---
 
 ## 🚀 How to Run the Project
-
-### 1. Clone the repository
-
-```bash
+1. Clone the repository
 git clone https://github.com/your-username/GarageFlow.git
-
 2. Navigate to project folder
 cd GarageFlow
-
 3. Run the application
 mvn spring-boot:run
-
 4. Open in browser
 http://localhost:8080
 
-📡 API Endpoints
+## 📡 API Endpoints
 Method	Endpoint	Description
 GET	/vehicles	Get all vehicles
 GET	/vehicles/{id}	Get vehicle by ID
@@ -79,7 +73,7 @@ POST	/vehicles	Create new vehicle
 PUT	/vehicles/{id}	Update vehicle
 DELETE	/vehicles/{id}	Delete vehicle
 
-📦 Sample JSON Request
+## 📦 Sample JSON Request
 Create Vehicle
 {
   "vehicleName": "Honda City",
@@ -87,27 +81,26 @@ Create Vehicle
   "serviceType": "Oil Change"
 }
 
-🧠 What I Learned
+## 🧠 What I Learned
 Building REST APIs using Spring Boot
 Layered architecture (Controller → Service → Repository)
 CRUD operations with JPA
 Handling HTTP requests
 Structuring backend projects properly
 
-👨‍💻 Author
+## 👨‍💻 Author
+
 Tanisha Sharma
 Aspiring Backend Developer
 (Java | Spring Boot | REST APIs)
 
-⭐ Future Improvements
+## ⭐ Future Improvements
 Add MySQL database integration
 Add validation for inputs
 Add exception handling
 Add authentication (Spring Security)
 Deploy project online
-📌 Note
+
+## 📌 Note
 
 This is a learning project focused on backend development fundamentals and API design.
-
-
----
