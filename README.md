@@ -79,7 +79,7 @@ Create Vehicle
   "vehicleName": "Honda City",
   "ownerName": "Rahul Sharma",
   "serviceType": "Oil Change"
-}
+} 
 
 ## 🧠 What I Learned
 Building REST APIs using Spring Boot
@@ -89,10 +89,9 @@ Handling HTTP requests
 Structuring backend projects properly
 
 ## 👨‍💻 Author
-
 Tanisha Sharma
 Aspiring Backend Developer
-(Java | Spring Boot | REST APIs)
+(Java | Spring Boot | REST APIs) 
 
 ## ⭐ Future Improvements
 Add MySQL database integration
