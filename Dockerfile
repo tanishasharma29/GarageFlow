@@ -1,19 +1,17 @@
-# Use official Maven image to build the project
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+# Use Java 17 (stable for Spring Boot)
+FROM eclipse-temurin:17-jdk
 
+# Work directory
 WORKDIR /app
 
+# Copy project files
 COPY . .
 
-RUN mvn clean package -DskipTests
+# Give permission to Maven wrapper
+RUN chmod +x mvnw
 
-# Run stage
-FROM eclipse-temurin:17
+# Build the project
+RUN ./mvnw clean package -DskipTests
 
-WORKDIR /app
-
-COPY --from=build /app/target/*.jar app.jar
-
-EXPOSE 8080
-
-ENTRYPOINT ["java","-jar","app.jar"]
+# Run the jar
+CMD ["java", "-jar", "target/garageflow-0.0.1-SNAPSHOT.jar"]
