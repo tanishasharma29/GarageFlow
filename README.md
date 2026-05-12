@@ -57,7 +57,7 @@ src/main/java/GarageFlow
 
 ## 🚀 How to Run the Project
 1. Clone the repository
-git clone https://github.com/your-username/GarageFlow.git
+git clone https://github.com/tanishasharma29/GarageFlow.git
 2. Navigate to project folder
 cd GarageFlow
 3. Run the application
